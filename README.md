@@ -1,4 +1,22 @@
-# Getting Started with Create React App
+# YouTube Clone
+
+A responsive YouTube-style home feed built with React. It includes a YouTube Data API adapter in `src/youtubeApi.js`, search, category filters, responsive navigation, and a curated demo feed for local development.
+
+## YouTube API setup
+
+The app works immediately in demo mode. To use live YouTube search results:
+
+1. Create a YouTube Data API v3 key in Google Cloud Console.
+2. Create a `.env` file in the project root with `REACT_APP_YOUTUBE_API_KEY=your_key_here`.
+3. Restart the development server.
+
+The browser should never expose a production API key without restrictions. For production, proxy YouTube requests through a server and restrict the key by referrer and API quota.
+
+## Available scripts
+
+`npm start` runs the development server. `npm test -- --watchAll=false --runInBand` runs the test suite. `npm run build` creates a production build.
+
+## CRA reference
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
