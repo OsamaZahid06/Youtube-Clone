@@ -31,58 +31,82 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+# YouTube Clone
 
-### `npm test`
+A responsive YouTube-style video browsing app built with React. Browse recommendations, search videos, filter by category, watch embedded content, and explore related videos through a clean desktop and mobile-friendly interface.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- Demo feed that works without an API key
+- YouTube Data API v3 search integration
+- Search, category filters, Explore sections, Shorts, and subscriptions views
+- Embedded video watch page with related videos
+- Watch Later, liked videos, and watch history
+- Local demo sign-in and sign-out flow
+- Playlist and upload UI placeholders for future API integration
+- `localStorage` persistence for user data and library actions
+- Responsive navigation and accessible interactive controls
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tech stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React 19
+- Create React App
+- JavaScript and JSX
+- `lucide-react` icons
+- YouTube Data API v3
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Getting started
 
-### `npm run eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Node.js and npm
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Install and run
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm install
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+The app starts in demo mode by default, so no API key is required for local development.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Live YouTube data
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To enable live search results:
 
-### Code Splitting
+1. Create a YouTube Data API v3 key in Google Cloud Console.
+2. Enable the YouTube Data API v3 for the project.
+3. Create a `.env` file in the project root:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```env
+REACT_APP_YOUTUBE_API_KEY=your_api_key_here
+```
 
-### Analyzing the Bundle Size
+4. Restart the development server.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The API key is exposed to the browser by Create React App. For production, use a backend proxy and restrict the key by referrer, API quota, and allowed APIs.
 
-### Making a Progressive Web App
+## Available scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+| Command | Description |
+| --- | --- |
+| `npm start` | Start the development server |
+| `npm test` | Run the test suite in watch mode |
+| `npm run build` | Create an optimized production build in `build/` |
+| `npm run eject` | Eject from Create React App configuration |
 
-### Advanced Configuration
+## Project structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```text
+src/
+	App.js          Main layout, navigation, video views, and app state
+	App.css         Application styling
+	youtubeApi.js   Demo data and YouTube API adapter
+	index.js        React entry point
+```
 
-### Deployment
+## Notes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The demo account, playlists, comments, and upload controls are local UI demonstrations. They do not connect to a real authentication, creator, or database service.
